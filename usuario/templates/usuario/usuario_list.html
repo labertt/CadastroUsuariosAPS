@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<h3>Listagem de Usuários</h3>
+
+<form method="GET">
+    <input type="text" name="nome" placeholder="Buscar por Usuário"/>
+    <input type="submit" value="Buscar"/>
+</form>
+<a href="{% url 'usuario.novo' %}">Novo</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nome Completo</th>
+            <th>CPF</th>
+            <th>Data de Nascimento</th>
+            <th>Endereço</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Opções</th>
+        </tr>
+        <tbody>
+            {% for usuario in object_list %}
+            <tr>
+                <td>{{ usuario.nome_completo }}</td>
+                <td>{{ usuario.cpf }}</td>
+                <td>{{ usuario.data_nascimento|date:'d/m/Y' }}</td>
+                <td>{{ usuario.endereco }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.password }}</td>
+                <td>
+                    <a href="{% url 'usuario.editar' usuario.pk %}">Editar</a>
+                    <a href="{% url 'usuario.excluir' usuario.pk %}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+{% endblock content %}
+
