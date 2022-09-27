@@ -13,6 +13,18 @@ def validacao_nome(value):
     else:
         return value
 
+def validacao_endereco(value):
+    if len(value) < 5:
+        raise ValidationError('O endereço deve ter no mínimo 5 caracteres!')
+    else:
+        return value
+
+def validacao_password(value):
+    if len(value) < 8:
+        raise ValidationError('A senha deve ter no mínimo 8 caracteres!')
+    else:
+        return value
+
 def validacao_email(value):
     if '@' not in value:
         raise ValidationError('O email deve ter o "@"')
