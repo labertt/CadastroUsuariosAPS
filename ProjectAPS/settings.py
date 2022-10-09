@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'usuario',
-    'validacao'
+    'validacao',
+    'bootstrapform'
 ]
 
 MIDDLEWARE = [

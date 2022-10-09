@@ -1,8 +1,29 @@
 {% extends 'main/base.html' %}
 {% block content %}
+
+<style>
+    table, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    th {
+        color: white;
+    }
+    
+    td {
+        padding: 5px 10px;
+        color: black;
+    }
+    
+    thead {
+        background-color: black;
+    }
+</style>
+
 <h3>Listagem de Usuários</h3>
 
-<form method="GET">
+<form style="margin-bottom: 20px;" method="GET">
     <input type="text" name="nome" placeholder="Buscar por Usuário"/>
     <input type="submit" value="Buscar"/>
 </form>
@@ -23,9 +44,9 @@
                 <td>{{ usuario.data_nascimento|date:'d/m/Y' }}</td>
                 <td>{{ usuario.endereco }}</td>
                 <td>
-                    <a href="{% url 'usuario.editar' usuario.pk %}">Editar</a>
-                    <a href="{% url 'usuario.excluir' usuario.pk %}">Excluir</a>
-                    <a href="/accounts/register">Cadastre-se</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'usuario.editar' usuario.pk %}">Editar</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'usuario.excluir' usuario.pk %}">Excluir</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="/accounts/register">Registrar cadastro</a>
                 </td>
             </tr>
             {% endfor %}
