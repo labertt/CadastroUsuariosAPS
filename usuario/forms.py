@@ -8,4 +8,3 @@ class UsuarioForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ['nome_completo', 'cpf', 'data_nascimento', 'endereco', 'email', 'password']
-
