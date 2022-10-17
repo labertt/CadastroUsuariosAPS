@@ -30,3 +30,9 @@ def validacao_email(value):
         raise ValidationError('O email deve ter o "@"')
     else:
         return value
+
+def validacao_data(value):
+    try:
+        __ = date(value)
+    except ValueError:
+        raise ValidationError('Data inválida')

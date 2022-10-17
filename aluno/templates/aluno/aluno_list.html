@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<style>
+    table, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    th {
+        color: white;
+    }
+    
+    td {
+        padding: 5px 10px;
+        color: black;
+    }
+    
+    thead {
+        background-color: black;
+    }
+</style>
+
+<h3>Listagem de Usuários</h3>
+
+<form style="margin-bottom: 20px;" method="GET">
+    <input type="text" name="nome" placeholder="Buscar por Aluno"/>
+    <input type="submit" value="Buscar"/>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Nome Completo</th>
+            <th>CPF</th>
+            <th>Data de Nascimento</th>
+            <th>Endereço</th>
+            <th>Turno</th>
+            <th>Arte Marcial</th>
+            <th>Opções</th>
+        </tr>
+        <tbody>
+            {% for aluno in object_list %}
+            <tr>
+                <td>{{ aluno.nome_completo_aluno }}</td>
+                <td>{{ aluno.cpf_aluno }}</td>
+                <td>{{ aluno.data_nascimento_aluno|date:'d/m/Y' }}</td>
+                <td>{{ aluno.endereco_aluno }}</td>
+                <td>{{ aluno.turno_aluno }}</td>
+                <td>{{ aluno.arte_marcial_aluno }}</td>
+                <td>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'aluno.editar' aluno.pk %}">Editar</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'aluno.excluir' aluno.pk %}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+{% endblock content %}
