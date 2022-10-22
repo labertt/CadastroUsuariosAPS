@@ -1,4 +1,5 @@
-from django.core.exceptions import ValidationError 
+from django.core.exceptions import ValidationError
+import datetime
 
 def validacao_cpf(value):
     if len(str(value)) != 11:
@@ -27,5 +28,14 @@ def validacao_password(value):
 def validacao_email(value):
     if '@' not in value:
         raise ValidationError('O email deve ter o "@"')
+    else:
+        return value
+
+
+def validator_data(value):
+    data_user = value
+    data_server = datetime.datetime.today()
+    if str(data_user) > str(data_server):
+        raise ValidationError('Você não pode nascer no futuro!')
     else:
         return value
