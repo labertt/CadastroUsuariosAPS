@@ -7,4 +7,4 @@ class UsuarioForm(forms.ModelForm):
     data_nascimento = forms.DateField(widget=forms.TextInput(attrs={"type": "date"}))
     class Meta:
         model = Usuario
-        fields = ['nome_completo', 'cpf', 'data_nascimento', 'endereco', 'email', 'password']
+        fields = ['nome_completo', 'cpf', 'data_nascimento', 'endereco', 'email', 'usernome']

@@ -34,6 +34,7 @@
             <th>CPF</th>
             <th>Data de Nascimento</th>
             <th>Endereço</th>
+            <th>Username</th>
             <th>Opções</th>
         </tr>
         <tbody>
@@ -43,6 +44,7 @@
                 <td>{{ usuario.cpf }}</td>
                 <td>{{ usuario.data_nascimento|date:'d/m/Y' }}</td>
                 <td>{{ usuario.endereco }}</td>
+                <td>{{ usuario.usernome }}</td>
                 <td>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'usuario.editar' usuario.pk %}">Editar</a>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'usuario.excluir' usuario.pk %}">Excluir</a>
