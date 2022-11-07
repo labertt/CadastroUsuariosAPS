@@ -10,4 +10,4 @@ class Aluno(models.Model):
     arte_marcial_aluno = models.CharField(max_length=256)
 
     def __str__(self) -> str:
-        return self.nome_completo_aluno
+        return str(self.nome_completo_aluno)

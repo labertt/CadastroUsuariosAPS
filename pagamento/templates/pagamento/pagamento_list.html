@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<style>
+    table, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+
+    th {
+        color: white;
+    }
+    
+    td {
+        padding: 5px 10px;
+        color: black;
+    }
+    
+    thead {
+        background-color: black;
+    }
+</style>
+
+<h3>Listagem de Pagamentos</h3>
+
+<form style="margin-bottom: 20px;" method="GET">
+    <input type="text" name="nome" placeholder="Buscar por Aluno"/>
+    <input type="submit" value="Buscar"/>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Nome do Aluno</th>
+            <th>Data do Pagamento</th>
+            <th>Opções</th>
+        </tr>
+        <tbody>
+            {% for pagamento in object_list %}
+            <tr>
+                <td>{{ pagamento.nome_aluno }}</td>
+                <td>{{ pagamento.data_pagamento|date:'d/m/Y' }}</td>
+                <td>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.editar' pagamento.pk %}">Editar</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.excluir' pagamento.pk %}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+{% endblock content %}
