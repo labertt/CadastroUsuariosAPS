@@ -32,17 +32,17 @@
         <tr>
             <th>Nome do Aluno</th>
             <th>Data do Pagamento</th>
-            <th>Opções</th>
+            <!--<th>Opções</th>-->
         </tr>
         <tbody>
             {% for pagamento in object_list %}
             <tr>
                 <td>{{ pagamento.nome_aluno }}</td>
                 <td>{{ pagamento.data_pagamento|date:'d/m/Y' }}</td>
-                <td>
+                <!--<td>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.editar' pagamento.pk %}">Editar</a>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.excluir' pagamento.pk %}">Excluir</a>
-                </td>
+                </td>-->
             </tr>
             {% endfor %}
         </tbody>
