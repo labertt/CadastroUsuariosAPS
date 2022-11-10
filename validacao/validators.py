@@ -39,3 +39,9 @@ def validator_data(value):
         raise ValidationError('Você não pode nascer no futuro!')
     else:
         return value
+
+def validator_sem_nums(value):
+    if any(n.isdigit() for n in value):
+        raise ValidationError('Esse campo não pode ter números!')
+    else:
+        value
