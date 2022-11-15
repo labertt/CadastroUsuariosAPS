@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'validacao',
     'bootstrapform',
     'aluno',
-    'pagamento'
+    'pagamento',
+    'presenca'
 ]
 
 MIDDLEWARE = [

@@ -50,6 +50,7 @@
                 <td>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'aluno.editar' aluno.pk %}">Editar</a>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'aluno.excluir' aluno.pk %}">Excluir</a>
+                    <a style="color: darkslateblue; text-decoration: none;" href="{% url 'presenca.novo' %}">Registrar Presença</a>
                 </td>
             </tr>
             {% endfor %}
