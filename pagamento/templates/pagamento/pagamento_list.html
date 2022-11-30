@@ -32,6 +32,9 @@
         <tr>
             <th>Nome do Aluno</th>
             <th>Data do Pagamento</th>
+            <th>Mês do Pagamento</th>
+            <th>Forma do Pagamento</th>
+            <th>Valor</th>
             <!--<th>Opções</th>-->
         </tr>
         <tbody>
@@ -39,6 +42,9 @@
             <tr>
                 <td>{{ pagamento.nome_aluno }}</td>
                 <td>{{ pagamento.data_pagamento|date:'d/m/Y' }}</td>
+                <td>{{ pagamento.mes_pagamento }}</td>
+                <td>{{ pagamento.forma_pagamento }}</td>
+                <td>{{ pagamento.valor_pagamento }}</td>
                 <!--<td>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.editar' pagamento.pk %}">Editar</a>
                     <a style="color: darkslateblue; text-decoration: none;" href="{% url 'pagamento.excluir' pagamento.pk %}">Excluir</a>
