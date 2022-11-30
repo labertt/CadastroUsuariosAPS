@@ -7,4 +7,4 @@ class PagamentoForm(forms.ModelForm):
     data_pagamento = forms.DateField(widget=forms.TextInput(attrs={"type": "date"}))
     class Meta:
         model = Pagamento
-        fields = ['nome_aluno', 'data_pagamento']
+        fields = ['nome_aluno', 'data_pagamento', 'mes_pagamento', 'forma_pagamento', 'valor_pagamento']
