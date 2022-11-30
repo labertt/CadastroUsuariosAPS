@@ -22,7 +22,7 @@ class Aluno(models.Model):
     cpf_aluno = models.CharField(unique=True, max_length=256, validators=[validacao_cpf])
     data_nascimento_aluno = models.DateField(validators=[validator_data])
     endereco_aluno = models.CharField(max_length=256, validators=[validacao_endereco])
-    turno_aluno = models.CharField(max_length=256)
+    turno_aluno = models.CharField(max_length=256, choices=turnos)
     arte_marcial_aluno = models.CharField(max_length=256, blank=False, null=True, choices=artes_marciais)
 
     def __str__(self) -> str:
