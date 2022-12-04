@@ -1,5 +1,6 @@
 from django.db import models
 from aluno.models import Aluno
+from validacao.validators import validator_data_pagamento
 
 class Pagamento(models.Model):
     meses = (
@@ -25,7 +26,7 @@ class Pagamento(models.Model):
 
 
     nome_aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    data_pagamento = models.DateField()
+    data_pagamento = models.DateField(validators=[validator_data_pagamento])
     mes_pagamento = models.CharField(max_length=256, blank=False, null=True, choices=meses)
     forma_pagamento = models.CharField(max_length=256, blank=False, null=True, choices=pagamentos)
     valor_pagamento = models.CharField(max_length=30, blank=False, null=True)

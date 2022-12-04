@@ -1,11 +1,27 @@
 {% extends 'main/base.html' %}
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Ok">
-</form>
-<p class="text-center">Não possui conta?
-    <a href="/accounts/register">Cadastre-se</a>
-</p>
+<style>
+
+    body {
+        text-align: center;
+        padding: 0px;
+    }
+
+    body input {
+        background-color: black;
+    }
+
+</style>
+<div class='jumbotron text-center'>
+    <div class='container'>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="botaook" type="submit" value="Ok">
+        </form>
+        <p class="text-center" style="margin-top: 20px;">Não possui conta?
+            <a href="/accounts/register">Cadastre-se</a>
+        </p>
+    </div>
+</div>
 {% endblock content %}

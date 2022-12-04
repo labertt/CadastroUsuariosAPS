@@ -1,7 +1,16 @@
 {% extends 'main/base.html' %}
 {% load bootstrap %}
 {% block content %}
-<form method="post">
+
+<style>
+    .formpresenca {
+        padding-left: 90px;
+        padding-right: 150px;
+        margin-right: 200px;
+    }
+</style>
+
+<form class"formpresenca" method="post">
     {% csrf_token %} 
     {{ form|bootstrap }}
     <input type="submit" value="Submeter Form" style="margin-top: 10px;"></input>

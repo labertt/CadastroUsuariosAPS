@@ -1,6 +1,8 @@
+{% load static %}
+
 {% if user.is_authenticated %}
 
-    <style>
+    <!--<style>
         #menu {
             list-style-type: none;
             padding: 10px;
@@ -34,5 +36,36 @@
             <li><a href="{% url 'pagamento.novo' %}">Novo Pagamento</a></li>
             <li><a href="{% url 'logout' %}">Log out</a></li>
         </ul>
+    </div>-->
+
+    <nav class='navbar navbar-inverse navbar-fixed-top'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <a class='navbar-brand' href="{% url 'home' %}">Academy Combat</a>
+                <button class='btn navbar-btn btn-link pull-right' data-target='#modalNavigation' data-toggle='modal' type='button'>
+                    <span class='sr-only'>Open navigation</span>
+                    <span class='glyphicon glyphicon-menu-hamburger'></span>
+                </button>
+          </div>
+        </div>
+    </nav>
+    <div class='modal fade modal-fullscreen-menu' id='modalNavigation' role='dialog' tabindex='-1'>
+        <button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+            <span class='sr-only'>Close navigation</span>
+            <span class='glyphicon glyphicon-remove'></span>
+        </button>
+        <div class='modal-dialog'>
+            <nav class='list-group'>
+                <a class='list-group-item' href="{% url 'home' %}">Home</a>
+                <a class='list-group-item' href="{% url 'usuario.index' %}">Usuários</a>
+                <a class='list-group-item' href="{% url 'aluno.index' %}">Alunos</a>
+                <a class='list-group-item' href="{% url 'pagamento.index' %}">Pagamentos</a>
+                <a class='list-group-item' href="{% url 'presenca.index' %}">Lista de Presença</a>
+                <a class='list-group-item' href="{% url 'usuario.novo' %}">Novo Usuário</a>
+                <a class='list-group-item' href="{% url 'aluno.novo' %}">Novo Aluno</a>
+                <a class='list-group-item' href="{% url 'pagamento.novo' %}">Novo Pagamento</a>
+                <a class='list-group-item' href="{% url 'logout' %}">Log out</a>
+            </nav>
+        </div>
     </div>
 {% endif %}

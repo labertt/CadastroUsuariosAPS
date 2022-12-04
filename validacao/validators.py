@@ -40,6 +40,22 @@ def validator_data(value):
     else:
         return value
 
+def validator_data_presenca(value):
+    data_user = value
+    data_server = datetime.datetime.today()
+    if str(data_user) > str(data_server):
+        raise ValidationError('Você não pode marcar presença no futuro!')
+    else:
+        return value
+
+def validator_data_pagamento(value):
+    data_user = value
+    data_server = datetime.datetime.today()
+    if str(data_user) > str(data_server):
+        raise ValidationError('Data inválida!')
+    else:
+        return value
+
 def validator_sem_nums(value):
     if any(n.isdigit() for n in value):
         raise ValidationError('Esse campo não pode ter números!')

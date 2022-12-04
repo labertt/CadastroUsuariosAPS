@@ -14,7 +14,7 @@ class Aluno(models.Model):
 
     turnos = (
         ('Matutino', 'Matutino'),
-        ('Vespertino', 'Tarde'),
+        ('Vespertino', 'Vespertino'),
         ('Noturno', 'Noturno')
     )
 
